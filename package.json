@@ -1,5 +1,5 @@
 {
-  "name": "st-react-cl",
+  "name": "zn-cli",
   "description": "脚手架测试版",
   "main": "index.js",
   "bin": {
@@ -10,7 +10,7 @@
   },
   "author": "taosong",
   "license": "MIT",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "dependencies": {
     "chalk": "^2.4.2",
     "co": "^4.6.0",
