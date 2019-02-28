@@ -10,7 +10,7 @@
   },
   "author": "taosong",
   "license": "MIT",
-  "version": "0.0.9",
+  "version": "0.1.0",
   "dependencies": {
     "chalk": "^2.4.2",
     "co": "^4.6.0",
@@ -19,6 +19,7 @@
     "download-git-repo": "^1.1.0",
     "fs-extra": "^7.0.1",
     "log-symbols": "^2.2.0",
-    "ora": "^3.1.0"
+    "ora": "^3.1.0",
+    "readline-sync": "^1.4.9"
   }
 }

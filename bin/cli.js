@@ -10,33 +10,52 @@ const path = require('path');
 const symbols = require('log-symbols');
 const program = require('commander');
 const download = require('download-git-repo');
+var readlineSync = require('readline-sync');
 
 const packageJson = require('../package.json');
 const spawn = require('child_process').spawn;
 const log = console.log;
 
-const _download = (path, name, callback) => {
-  download(
-    path,
-    name,
-    {clone: true},
-    err => {
-      if(err) {
-        log(symbols.error, chalk.red(err));
-        if(spinner) {
-          spinner.fail();
+const _cli = {
+  author: '',
+  _download: (path, name, callback) => {
+    download(
+      path,
+      name,
+      {clone: true},
+      err => {
+        if(err) {
+          log(symbols.error, chalk.red(err));
+          if(spinner) {
+            spinner.fail();
+          }
+        } else {
+          callback && callback();
         }
-      } else {
-        callback && callback();
       }
-    }
-  )
+    )
+  },
+  _reWritePackageJson: async (name) => {
+    const stPackagePath = path.resolve(process.cwd(), `${name}/package.json`);
+    const data = await fse.readFile(stPackagePath, 'utf8');
+    const packageJson = JSON.parse(data);
+    packageJson.name = name;
+    if(this.author) packageJson.author = this.author;
+    await fse.outputJson(stPackagePath, packageJson, {encoding: 'utf8', spaces: 4})
+  },
+  _gatherUserInfo: () => {
+    // Wait for user's response.
+    const userName = readlineSync.question('author: ');
+    this.author = userName;
+  }
 }
+
+_cli._gatherUserInfo()
 
 program
     .version(packageJson.version)
     .command('init <type> <name>')
-    .description('init a new <type> project')
+    .description('init a new react/vue project')
     .action((type, name) => {
       const root =  path.resolve(name);
       if(!fs.existsSync(name)) {
@@ -44,13 +63,15 @@ program
         const spinner = ora('Downloading template...').start();
         if(type === 'react') {
           // download react template
-          _download(
+          _cli._download(
             'https://github.com:ZnFrontEnd/zn-cli#react-template',
             name,
             () => {
               spinner.succeed();
               // 删除脚手架中的build.js文件
               spawn('rm', ['-rf', `${name}/build.js`]);
+              // 重写实例中package.json中name属性
+              _cli._reWritePackageJson(name);
               log(symbols.success, chalk.green('Download successful!'));
               log(chalk.yellow(
                 `
@@ -64,15 +85,6 @@ program
         } else {
           // 暂时不支持
           // download vue template
-          // _download(
-          //   'https://github.com:ZnFrontEnd/zn-cli#vueTemplate',
-          //   name,
-          //   () => {
-          //     spinner.succeed();
-          //     console.log(symbols.success, chalk.green('Download successful!'));
-          //
-          //   }
-          // )
         }
       } else {
         log(symbols.error, chalk.red(`The ${name} folder already exists!`));
