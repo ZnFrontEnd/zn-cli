@@ -1,16 +1,21 @@
 {
   "name": "zn-cli",
+  "version": "0.1.2",
+  "author": "taosong",
   "description": "脚手架测试版",
   "main": "index.js",
   "bin": {
     "zn-cli": "bin/index.js"
   },
+  "keywords": [
+    "react",
+    "vue",
+    "zn-cli"
+  ],
   "scripts": {
     "test": "node bin/index.js init react test"
   },
-  "author": "taosong",
   "license": "MIT",
-  "version": "0.1.0",
   "dependencies": {
     "chalk": "^2.4.2",
     "co": "^4.6.0",

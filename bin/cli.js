@@ -18,6 +18,7 @@ const log = console.log;
 
 const _cli = {
   author: '',
+  version: '0.0.1',
   _download: (path, name, callback) => {
     download(
       path,
@@ -41,12 +42,15 @@ const _cli = {
     const packageJson = JSON.parse(data);
     packageJson.name = name;
     if(this.author) packageJson.author = this.author;
+    packageJson.version = this.version;
     await fse.outputJson(stPackagePath, packageJson, {encoding: 'utf8', spaces: 4})
   },
   _gatherUserInfo: () => {
     // Wait for user's response.
     const userName = readlineSync.question('author: ');
-    this.author = userName;
+    if(author) this.author = userName;
+    const version = readlineSync.question('version: ');
+    if(version) this.version = version;
   }
 }
 
