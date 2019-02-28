@@ -45,7 +45,7 @@ program
         if(type === 'react') {
           // download react template
           _download(
-            'https://github.com:ZnFrontEnd/zn-cli#react-template',
+            'https://github.com:ZnFrontEnd/zn-cli#reactTemplate',
             name,
             () => {
               spinner.succeed();
@@ -65,7 +65,7 @@ program
           // 暂时不支持
           // download vue template
           // _download(
-          //   'https://github.com:ZnFrontEnd/zn-cli#vue-template',
+          //   'https://github.com:ZnFrontEnd/zn-cli#vueTemplate',
           //   name,
           //   () => {
           //     spinner.succeed();
