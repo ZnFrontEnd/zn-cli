@@ -45,7 +45,7 @@ program
         if(type === 'react') {
           // download react template
           _download(
-            'https://github.com:ZnFrontEnd/zn-cli#reactTemplate',
+            'https://github.com:ZnFrontEnd/zn-cli#react-template',
             name,
             () => {
               spinner.succeed();
