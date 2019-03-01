@@ -42,3 +42,7 @@ npm run dev
 npm run update
 ```
 
+## License
+
+MIT.
+
