@@ -1,8 +1,8 @@
 {
   "name": "zn-cli",
-  "version": "0.1.2",
+  "version": "0.1.8",
   "author": "taosong",
-  "description": "脚手架测试版",
+  "description": "通过zn-cli可以生成react/vue项目实例,方便，快速，长期维护",
   "main": "index.js",
   "bin": {
     "zn-cli": "bin/index.js"
@@ -13,7 +13,8 @@
     "zn-cli"
   ],
   "scripts": {
-    "test": "node bin/index.js init react test"
+    "testreact": "node bin/index.js init react test",
+    "testvue": "node bin/index.js init vue test"
   },
   "license": "MIT",
   "dependencies": {
