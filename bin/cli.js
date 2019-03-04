@@ -76,14 +76,14 @@ program
               spawn('rm', ['-rf', `${name}/build.js`]);
               // 重写实例中package.json中name属性
               _cli._reWritePackageJson(name);
-              log(symbols.success, chalk.green('Download successful!'));
-              log(chalk.yellow(
-                `
-                ===========tips==========\n
-                cd ${name} && npm install\n
-                npm run dev
-                `
-              ))
+              log(symbols.success, `Success! Created reacttest at ${path.resolve(process.cwd(), name)}
+Inside that directory, you can run several commands:`);
+              log(chalk.bgCyan(`cd ${name}`));
+              log(chalk.bgCyan('npm install'));
+              log(chalk.bgCyan(' npm run start'));
+              log(' Starts the development server.');
+              log(chalk.bgCyan('npm run build'));
+              log(' Bundles the app into static files for production.');
             }
           )
         } else {
