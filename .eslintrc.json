@@ -1,0 +1,6 @@
+{
+    "extends": ["prettier", "airbnb"],
+    "rules": {
+        "prettier/prettier": "error"
+    }
+}
