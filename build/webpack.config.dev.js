@@ -13,6 +13,11 @@ module.exports = {
         filename: 'js/[name].js',
         path: paths.DIST_PATH
     },
+    resolve: {
+        alias: {
+            '@': paths.APP_PATH
+        }
+    },
     plugins: [
         new HtmlWebpackPlugin({
             template: paths.HTML_PATH,

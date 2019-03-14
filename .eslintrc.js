@@ -25,6 +25,8 @@ module.exports = {
         "no-use-before-define": 0,
         "no-param-reassign": 0,
         "react/prefer-stateless-function": 0,
-        "semi": 1
+        "no-shadow": 0,
+        "import/no-dynamic-require": 1,
+        "import/no-unresolved": 0
     }
 };

@@ -16,6 +16,11 @@ module.exports = {
         filename: 'js/[name].[chunkhash:8].js',
         path: paths.DIST_PATH
     },
+    resolve: {
+        alias: {
+            '@': paths.APP_PATH
+        }
+    },
     plugins: [
         new HtmlWebpackPlugin({
             template: paths.HTML_PATH,

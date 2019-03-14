@@ -1,6 +1,22 @@
 {
     "extends": ["prettier", "airbnb"],
     "rules": {
-        "prettier/prettier": "error"
+        "prettier/prettier": "error",
+        "indent": [
+            "error",
+            4
+        ],
+        "linebreak-style": [
+            "error",
+            "unix"
+        ],
+        "quotes": [
+            "error",
+            "single"
+        ],
+        "semi": [
+            "error",
+            "never"
+        ]
     }
 }
