@@ -48,7 +48,7 @@ const _cli = {
   _gatherUserInfo: () => {
     // Wait for user's response.
     const userName = readlineSync.question('author: ');
-    if(author) this.author = userName;
+    if(userName) this.author = userName;
     const version = readlineSync.question('version: ');
     if(version) this.version = version;
   }
@@ -78,12 +78,12 @@ program
               _cli._reWritePackageJson(name);
               log(symbols.success, `Success! Created reacttest at ${path.resolve(process.cwd(), name)}
 Inside that directory, you can run several commands:`);
-              log(chalk.bgCyan(`cd ${name}`));
-              log(chalk.bgCyan('npm install'));
-              log(chalk.bgCyan(' npm run start'));
-              log(' Starts the development server.');
-              log(chalk.bgCyan('npm run build'));
-              log(' Bundles the app into static files for production.');
+              log(chalk.green(` cd ${name}`));
+              log(chalk.green(' npm install'));
+              log(chalk.green(' npm run start'));
+              log('Starts the development server.');
+              log(chalk.green(' npm run build'));
+              log('Bundles the app into static files for production.');
             }
           )
         } else {
