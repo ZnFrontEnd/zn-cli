@@ -17,6 +17,9 @@
 **ModuleScopePlugin**
 用以限制自己编写的模块只能从src目录中引入
 
+**single-line-log**
+Node.js模块，它一直写入控制台（或流）中的同一行。在较长操作期间编写进度条或状态消息时非常有用。支持多行。可以用来自己实现一个下载进度条
+
 ###说明
 ```js
 VM11304 index.js:1384 Warning: Failed prop type: Invalid prop `component` of type `object` supplied to `Route`, expected `function`.
