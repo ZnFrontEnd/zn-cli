@@ -13,12 +13,12 @@ const { log } = console;
 // 删除dist目录
 del.sync(webpackProdConfig.output.path);
 // 添加打包进度条插件
-webpackProdConfig.plugins.concat([
+webpackProdConfig.plugins.push(
   new ProgressBarPlugin({
     format: `build [:bar]${chalk.green.bold(":percent")} (:elapsed seconds)`,
     clear: true
   })
-]);
+);
 if (process.stdout.isTTY) clearConsole();
 const compiler = webpack(webpackProdConfig);
 
