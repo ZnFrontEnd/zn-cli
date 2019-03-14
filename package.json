@@ -1,6 +1,7 @@
 {
     "name": "digag-test",
     "version": "0.0.1",
+    "author": "songtao",
     "dependencies": {
         "@loadable/component": "^5.6.1",
         "react": "^16.8.4",
