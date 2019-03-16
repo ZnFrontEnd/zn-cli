@@ -26,9 +26,9 @@ zn-cli init [template] [projectName]
 
 tips：
 
-* `<template>` : react/vue
+* `[template]` : react/vue
 
-* `<projectName>`: 项目的名称
+* `[projectName]`: 项目的名称
 
 ## 启动项目
 
