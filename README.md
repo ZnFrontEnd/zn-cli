@@ -6,7 +6,7 @@ A light tool to generate projects in an easy way.
   <a href="https://www.npmjs.com/package/zn-cli">
   	<img alt="npm" src="https://img.shields.io/npm/v/zn-cli.svg">
   </a>
-<a href="https://github.com/ZnFrontEnd/zn-cli/master/LICENSE">
+<a href="https://github.com/ZnFrontEnd/zn-cli/blob/master/LICENSE.txt">
   <img src="https://img.shields.io/cocoapods/l/Kingfisher.svg?style=flat"></a>
 </p>
 
