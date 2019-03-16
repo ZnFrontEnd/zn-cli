@@ -21,7 +21,7 @@ npm install zn-cli -g
 ## 初始化项目
 
 ```nginx
-zn-cli init <template> <projectName>
+zn-cli init [template] [projectName]
 ```
 
 tips：
