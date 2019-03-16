@@ -27,6 +27,7 @@ npm run build
 ```
 .
 ├── README.md
+├──update.js  // 更新模板用，项目实例中不会出现
 ├── build  // [目录]webpack配置文件
 │   ├── webpack.config.dev.js
 │   └── webpack.config.prod.js
