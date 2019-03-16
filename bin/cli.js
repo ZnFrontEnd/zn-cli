@@ -72,8 +72,8 @@ program
             name,
             () => {
               spinner.succeed();
-              // 删除脚手架中的build.js文件
-              spawn('rm', ['-rf', `${name}/build.js`]);
+              // 删除脚手架中的update.js文件
+              spawn('rm', ['-rf', `${name}/update.js`]);
               // 重写实例中package.json中name属性
               _cli._reWritePackageJson(name);
               log(symbols.success, `Success! Created reacttest at ${path.resolve(process.cwd(), name)}
