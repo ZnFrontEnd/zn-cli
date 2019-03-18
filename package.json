@@ -4,18 +4,21 @@
     "author": "songtao",
     "dependencies": {
         "@loadable/component": "^5.6.1",
+        "antd": "^3.15.1",
         "react": "^16.8.4",
         "react-dom": "^16.8.4",
         "react-router-dom": "^4.3.1"
     },
     "devDependencies": {
         "@babel/core": "^7.3.4",
+        "@babel/plugin-proposal-class-properties": "^7.3.4",
         "@babel/plugin-syntax-dynamic-import": "^7.2.0",
         "@babel/preset-env": "^7.3.4",
         "@babel/preset-react": "^7.0.0",
         "autoprefixer": "^9.4.10",
         "babel-eslint": "^10.0.1",
         "babel-loader": "^8.0.5",
+        "babel-plugin-import": "^1.11.0",
         "case-sensitive-paths-webpack-plugin": "^2.2.0",
         "chalk": "^2.4.2",
         "css-loader": "^2.1.1",

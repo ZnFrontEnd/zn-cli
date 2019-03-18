@@ -57,7 +57,7 @@ class AuthorizedRoute extends Component {
       Layout = BaseLayout;
     }
     return (
-      <Layout>
+      <Layout routeConfig={routeConfig}>
         <Switch>{linkArr.length ? linkArr : <LoadingTemp />}</Switch>
       </Layout>
     );

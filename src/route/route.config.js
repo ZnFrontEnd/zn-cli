@@ -3,20 +3,28 @@ export default [
     path: "/",
     name: "home",
     exact: true,
-    component: "Home",
-    Layout: "BaseLayout"
+    component: "Home"
   },
   {
-    path: "/about",
     name: "about",
-    component: "About",
-    Layout: "BaseLayout"
+    path: "/about",
+    children: [
+      {
+        name: "aboutOne",
+        path: "/about/one",
+        component: "AboutOne"
+      },
+      {
+        name: "aboutTwo",
+        path: "/about/two",
+        component: "AboutTwo"
+      }
+    ]
   },
   {
     path: "/contact",
     name: "contact",
-    component: "Contact",
-    Layout: "BaseLayout"
+    component: "Contact"
   },
   {
     path: "/login",

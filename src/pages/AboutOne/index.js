@@ -2,9 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styles from "./index.less";
 
-const About = () => (
+const AboutOne = () => (
   <div>
-    <h2 className={styles.about}>this is About</h2>
+    <h2 className={styles.about}>this is AboutOne</h2>
     <Link to="/">Home</Link>
     &nbsp;
     <Link to="/contact">Contact</Link>
@@ -13,4 +13,4 @@ const About = () => (
   </div>
 );
 
-export default About;
+export default AboutOne;
