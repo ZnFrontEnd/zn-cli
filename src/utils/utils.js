@@ -1,3 +1,3 @@
-export const checkType = (obj, type) => {
-    return Object.prototype.toString.call(obj).slice(8, -1) === type;
-}
+
+// eslint-disable-next-line import/prefer-default-export
+export const checkType = (obj, type) => Object.prototype.toString.call(obj).slice(8, -1) === type;
