@@ -2,6 +2,7 @@
     "name": "digag-test",
     "version": "0.0.1",
     "author": "songtao",
+    "license": "MIT",
     "dependencies": {
         "@loadable/component": "^5.6.1",
         "react": "^16.8.4",

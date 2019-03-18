@@ -111,3 +111,11 @@ VM11304 index.js:1384 Warning: Failed prop type: Invalid prop `component` of typ
 **[路由按需加载](https://reacttraining.com/react-router/web/guides/code-splitting)**
 
 
+
+待完成：
+
+1.本地node服务，由于展示配置页面
+
+2.权限点控制菜单栏的显隐
+
+
