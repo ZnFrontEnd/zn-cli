@@ -10,10 +10,10 @@ module.exports = {
         }
     },
     "extends": [
-        "eslint:recommended",
-        // "airbnb"
+        "airbnb",
+        "prettier/react"
     ],
-    plugins: ["react", "jsx-a11y", "import"],
+    "plugins": ["react", "jsx-a11y", "import"],
     "rules": {
         "react/jsx-filename-extension": [1, { extensions: [".js", ".jsx"] }],
         "quotes": 0,

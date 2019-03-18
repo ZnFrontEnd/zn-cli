@@ -1,34 +1,40 @@
 export default [
   {
     path: "/",
-    name: "home",
+    key: '1-1',
+    name: "首页",
     exact: true,
     component: "Home"
   },
   {
-    name: "about",
+    name: "关于我们",
     path: "/about",
+    key: '2-2',
     children: [
       {
         name: "aboutOne",
         path: "/about/one",
+        key: '2-2-1',
         component: "AboutOne"
       },
       {
         name: "aboutTwo",
         path: "/about/two",
+        key: '2-2-2',
         component: "AboutTwo"
       }
     ]
   },
   {
     path: "/contact",
-    name: "contact",
+    name: "联系我们",
+    key: '3-1',
     component: "Contact"
   },
   {
     path: "/login",
-    name: "login",
+    name: "登录",
+    key: '4-1',
     component: "Login",
     Layout: "LoginLayout"
   }
