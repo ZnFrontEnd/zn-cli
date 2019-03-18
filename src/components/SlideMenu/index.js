@@ -17,8 +17,13 @@ class TestSlideMenu extends Component {
     console.log(this.props)
   }
 
-  createGroup = () => {
-    
+  createGroup = (group) => {
+    return (
+      <MenuItemGroup key="g1" title="Item 1">
+        <Menu.Item key="1">Option 1</Menu.Item>
+        <Menu.Item key="2">Option 2</Menu.Item>
+      </MenuItemGroup>
+    )
   }
   
   createMemu = () => {
