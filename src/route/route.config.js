@@ -13,13 +13,13 @@ export default [
     children: [
       {
         name: "aboutOne",
-        path: "/about/one",
+        path: "/aboutOne",
         key: '2-2-1',
         component: "AboutOne"
       },
       {
         name: "aboutTwo",
-        path: "/about/two",
+        path: "/aboutTwo",
         key: '2-2-2',
         component: "AboutTwo"
       }

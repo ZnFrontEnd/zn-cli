@@ -5,7 +5,7 @@ import { checkType } from "@/utils/utils";
 
 const { SubMenu } = Menu;
 
-class TestSlideMenu extends Component {
+class SlideMenu extends Component {
   constructor(props) {
     super(props);
     this.state = {};
@@ -15,13 +15,13 @@ class TestSlideMenu extends Component {
     console.log(this.props);
   }
 
-  createGroup = (group) => {
+  createGroup = (group, groupName) => {
     const itemArr = [];
     group.forEach((item, index) => {
       itemArr.push(<Menu.Item key={item.key}><Link to={item.path}>{item.name}</Link></Menu.Item>);
     });
     return (
-      <SubMenu key={group.key} title={<span><Icon type="mail" /><span>Navigation One</span></span>}>
+      <SubMenu key={`sub${group.key}`} title={<span><Icon type="mail" /><span>{groupName}</span></span>}>
       {itemArr}
       </SubMenu>
     );
@@ -44,7 +44,7 @@ class TestSlideMenu extends Component {
       routeConfig.forEach((item, index) => {
         const { children } = item;
         if (children) {
-          menuArr.push(this.createGroup(children));
+          menuArr.push(this.createGroup(children, item.name));
         } else {
           menuArr.push(this.createItem(item));
         }
@@ -67,4 +67,4 @@ class TestSlideMenu extends Component {
   }
 }
 
-export default TestSlideMenu;
+export default SlideMenu;

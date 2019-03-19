@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import TestSlideMenu from "@/components/SlideMenu/index";
+import SlideMenu from "@/components/SlideMenu/index";
 
 class BaseLayout extends Component {
   render() {
@@ -7,7 +7,7 @@ class BaseLayout extends Component {
     const { children, routeConfig } = this.props;
     return (
       <nav>
-        <TestSlideMenu routeConfig={routeConfig} />
+        <SlideMenu routeConfig={routeConfig} />
         {children}
         this is footer
       </nav>
