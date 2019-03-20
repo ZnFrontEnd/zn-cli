@@ -11,7 +11,7 @@ module.exports = {
         framework: ['react', 'react-dom']
     },
     output: {
-        publicPath: './',
+        publicPath: '/',
         filename: 'js/[name].[chunkhash:8].js',
         path: paths.DIST_PATH
     },

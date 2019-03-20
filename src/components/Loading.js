@@ -1,5 +1,16 @@
-import React from "react";
+import React, { Component } from "react";
 
-const LoadingTemp = () => <div>this is loading...</div>;
+class LoadingTemp extends Component {
+  render() {
+    // eslint-disable-next-line react/prop-types
+    const { children } = this.props;
+    return (
+      <div>
+        this is loading
+        {children}
+      </div>
+    );
+  }
+}
 
 export default LoadingTemp;

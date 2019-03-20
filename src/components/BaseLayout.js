@@ -5,6 +5,7 @@ class BaseLayout extends Component {
   render() {
     // eslint-disable-next-line react/prop-types
     const { children, routeConfig } = this.props;
+    console.log(children);
     return (
       <nav>
         <SlideMenu routeConfig={routeConfig} />

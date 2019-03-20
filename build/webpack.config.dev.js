@@ -1,5 +1,4 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const eslintFormatter = require('react-dev-utils/eslintFormatter');
 const paths = require('../config/paths');
 
 module.exports = {
@@ -10,6 +9,7 @@ module.exports = {
         app: paths.INDEX_PATH
     },
     output: {
+        publicPath: '/',
         filename: 'js/[name].js',
         path: paths.DIST_PATH
     },
