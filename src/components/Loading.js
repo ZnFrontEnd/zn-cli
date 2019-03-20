@@ -6,7 +6,7 @@ class LoadingTemp extends Component {
     const { children } = this.props;
     return (
       <div>
-        this is loading
+        loading。。。
         {children}
       </div>
     );
