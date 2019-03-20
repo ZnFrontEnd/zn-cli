@@ -12,16 +12,22 @@ class SlideMenu extends Component {
   }
 
   componentDidMount = () => {
-    console.log(this.props);
+    // console.log(this.props);
   }
 
-  createGroup = (group, groupName) => {
+
+  createGroup = (group, groupName, key) => {
     const itemArr = [];
     group.forEach((item, index) => {
-      itemArr.push(<Menu.Item key={item.key}><Link to={item.path}>{item.name}</Link></Menu.Item>);
+      if (item.routes) {
+        // 嵌套路由
+        itemArr.push(this.createGroup(item.routes, item.name));
+      } else {
+        itemArr.push(this.createItem(item));
+      }
     });
     return (
-      <SubMenu key={`sub${group.key}`} title={<span><Icon type="mail" /><span>{groupName}</span></span>}>
+      <SubMenu key={`sub${key}`} title={<span><Icon type="mail" /><span>{groupName}</span></span>}>
       {itemArr}
       </SubMenu>
     );
@@ -36,15 +42,21 @@ class SlideMenu extends Component {
     </Menu.Item>
   )
 
-  createMemu = () => {
+  createMemu = (routeConf) => {
     // eslint-disable-next-line react/prop-types
     const { routeConfig } = this.props;
+    // eslint-disable-next-line no-underscore-dangle
+    const _routeConf = routeConf || routeConfig;
     const menuArr = [];
-    if (routeConfig && checkType(routeConfig, "Array")) {
-      routeConfig.forEach((item, index) => {
-        const { children } = item;
-        if (children) {
-          menuArr.push(this.createGroup(children, item.name));
+    if (_routeConf && checkType(_routeConf, "Array")) {
+      _routeConf.forEach((item, index) => {
+        const { routes, key } = item;
+        if (routes) {
+          if (key) {
+            menuArr.push(this.createGroup(routes, item.name, key));
+          } else {
+            menuArr.push(this.createMemu(routes));
+          }
         } else {
           menuArr.push(this.createItem(item));
         }
