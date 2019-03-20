@@ -10,7 +10,7 @@ A light tool to generate projects in an easy way.
   <img src="https://img.shields.io/cocoapods/l/Kingfisher.svg?style=flat"></a>
 </p>
 
-  
+
 
 ## 安装项目
 
@@ -35,10 +35,10 @@ tips：
 ```
 cd [projectName]
 npm install
-npm run dev
+npm run start
 ```
 
-启动成功后，在浏览器中输入： `localhost:8080`即可访问
+启动成功后，会自动在默认浏览器中打开： `localhost:3000`即可访问
 
 ## 持续集成
 
