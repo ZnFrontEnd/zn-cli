@@ -1,12 +1,13 @@
 import React, { Component } from "react";
+import SlideMenu from "@/components/SlideMenu/index";
 
 class BaseLayout extends Component {
   render() {
     // eslint-disable-next-line react/prop-types
-    const { children } = this.props;
+    const { children, routeConfig } = this.props;
     return (
       <nav>
-        this is nav
+        <SlideMenu routeConfig={routeConfig} />
         {children}
         this is footer
       </nav>

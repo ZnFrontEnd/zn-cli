@@ -1,26 +1,40 @@
 export default [
   {
     path: "/",
-    name: "home",
+    key: '1-1',
+    name: "首页",
     exact: true,
-    component: "Home",
-    Layout: "BaseLayout"
+    component: "Home"
   },
   {
+    name: "关于我们",
     path: "/about",
-    name: "about",
-    component: "About",
-    Layout: "BaseLayout"
+    key: '2-2',
+    children: [
+      {
+        name: "aboutOne",
+        path: "/aboutOne",
+        key: '2-2-1',
+        component: "AboutOne"
+      },
+      {
+        name: "aboutTwo",
+        path: "/aboutTwo",
+        key: '2-2-2',
+        component: "AboutTwo"
+      }
+    ]
   },
   {
     path: "/contact",
-    name: "contact",
-    component: "Contact",
-    Layout: "BaseLayout"
+    name: "联系我们",
+    key: '3-1',
+    component: "Contact"
   },
   {
     path: "/login",
-    name: "login",
+    name: "登录",
+    key: '4-1',
     component: "Login",
     Layout: "LoginLayout"
   }

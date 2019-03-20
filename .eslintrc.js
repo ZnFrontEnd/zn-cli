@@ -10,10 +10,10 @@ module.exports = {
         }
     },
     "extends": [
-        "plugin:prettier/recommended",
-        "airbnb"
+        "airbnb",
+        "prettier/react"
     ],
-    plugins: ["react", "jsx-a11y", "import", "prettier"],
+    "plugins": ["react", "jsx-a11y", "import"],
     "rules": {
         "react/jsx-filename-extension": [1, { extensions: [".js", ".jsx"] }],
         "quotes": 0,
@@ -27,6 +27,7 @@ module.exports = {
         "react/prefer-stateless-function": 0,
         "no-shadow": 0,
         "import/no-dynamic-require": 1,
-        "import/no-unresolved": 0
+        "import/no-unresolved": 0,
+        "no-unused-vars": 0
     }
 };

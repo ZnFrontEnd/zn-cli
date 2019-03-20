@@ -17,26 +17,35 @@ class AuthorizedRoute extends Component {
   componentDidMount() {
     // 调用接口获取用户权限，从而刷选路由
     setTimeout(() => {
-      this.createLink();
+      this.createAllRoute();
     }, 3e3);
   }
 
-  createLink() {
+  createAllRoute = () => {
     const linkArr = [];
     const createRoute = ({ component: Component, path, ...rest }) => (
       <Route path={path} component={Component} {...rest} />
     );
-    routeConfig.forEach((item, index) => {
+    routeConfig.forEach(item => {
       // eslint-disable-next-line global-require
       // const ts = require(`../page/${item.component}/index`);
       //  ts.default
-      linkArr.push(
-        createRoute({
-          ...item,
-          key: index,
-          component: loadable(() => import(`../pages/${item.component}/index`))
-        })
-      );
+      const { children } = item;
+      if (children) {
+        children.forEach((route, i) => {
+          linkArr.push(createRoute({
+            ...route,
+            component: loadable(() => import(`../pages/${route.component}/index`))
+          }));
+        });
+      } else {
+        linkArr.push(
+          createRoute({
+            ...item,
+            component: loadable(() => import(`../pages/${item.component}/index`))
+          })
+        );
+      }
     });
     this.setState({
       linkArr: linkArr.concat(
@@ -57,7 +66,7 @@ class AuthorizedRoute extends Component {
       Layout = BaseLayout;
     }
     return (
-      <Layout>
+      <Layout routeConfig={routeConfig}>
         <Switch>{linkArr.length ? linkArr : <LoadingTemp />}</Switch>
       </Layout>
     );
