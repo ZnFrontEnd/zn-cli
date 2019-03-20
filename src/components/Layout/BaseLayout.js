@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import SlideMenu from "@/components/SlideMenu/index";
+import Styles from "./base.less";
 
 class BaseLayout extends Component {
   render() {
@@ -7,11 +8,15 @@ class BaseLayout extends Component {
     const { children, routeConfig } = this.props;
     console.log(children);
     return (
-      <nav>
-        <SlideMenu routeConfig={routeConfig} />
-        {children}
+      <div>
+        <div className={Styles.slideContainer}>
+          <SlideMenu routeConfig={routeConfig} />
+        </div>
+        <div className="container">
+          {children}
+        </div>
         this is footer
-      </nav>
+      </div>
     );
   }
 }

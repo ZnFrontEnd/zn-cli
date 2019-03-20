@@ -6,9 +6,9 @@ import {
   Redirect
 } from "react-router-dom";
 import routeConfig from "@/route/route.config";
-import BaseLayout from "@/components/BaseLayout";
-import LoginLayout from "@/components/LoginLayout";
-import LoadingTemp from "@/components/Loading";
+import BaseLayout from "@/components/Layout/BaseLayout";
+import LoginLayout from "@/components/Layout/LoginLayout";
+import LoadingTemp from "@/components/LoadingTemp/Loading";
 import loadable from "@loadable/component";
 
 class AuthorizedRoute extends Component {

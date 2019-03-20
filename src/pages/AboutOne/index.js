@@ -4,7 +4,7 @@ import styles from "./index.less";
 
 const AboutOne = () => (
   <div>
-    <h2 className={styles.about}>this is AboutOne</h2>
+    <h2 className={styles.about}>this is AboutOne page</h2>
     <Link to="/">Home</Link>
     &nbsp;
     <Link to="/contact">Contact</Link>
