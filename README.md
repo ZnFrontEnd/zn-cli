@@ -12,7 +12,7 @@ A light tool to generate projects in an easy way.
 
 
 
-## 安装项目
+## 安装脚手架
 
 ```nginx
 npm install zn-cli -g
