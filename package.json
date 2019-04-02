@@ -1,6 +1,6 @@
 {
   "name": "zn-cli",
-  "version": "0.1.13",
+  "version": "0.1.14",
   "author": "songtao",
   "description": "通过zn-cli可以生成react/vue项目实例,方便，快速，长期维护",
   "main": "index.js",
