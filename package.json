@@ -54,7 +54,8 @@
     "scripts": {
         "start": "node scripts/start.js",
         "build": "node scripts/build.js",
-        "lint": "eslint src"
+        "lint": "eslint src",
+        "update": "node update.js"
     },
     "husky": {
         "hooks": {
