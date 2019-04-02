@@ -1,5 +1,5 @@
 {
-    "name": "digag-test",
+    "name": "react-template",
     "version": "0.0.1",
     "author": "songtao",
     "license": "MIT",
@@ -55,7 +55,8 @@
         "start": "node scripts/start.js",
         "build": "node scripts/build.js",
         "lint": "eslint src",
-        "update": "node update.js"
+        "updatetest": "node update.js",
+        "update": "npm install git+ssh:git@github.com:ZnFrontEnd/zn-cli.git#react-template;node node_modules/react-template/update.js"
     },
     "husky": {
         "hooks": {
