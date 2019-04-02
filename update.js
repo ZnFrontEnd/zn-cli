@@ -51,11 +51,11 @@ var update = {
     _warning: function() {
         var notFindFiles = this.notFindFiles;
         var existedFiles = this.existedFiles;
-        console.log(chalk.yellow('以下组件没有查找到：\n'));
+        if(notFindFiles.length) console.log(chalk.yellow('以下组件没有查找到：\n'));
         notFindFiles.forEach(function(file) {
             console.log(chalk.yellow(file + '\n'));
         });
-        console.log(chalk.yellow('以下组件已存在你当前项目中：\n'));
+        if(existedFiles.length) console.log(chalk.yellow('以下组件已存在你当前项目中：\n'));
         existedFiles.forEach(function(file) {
             console.log(chalk.yellow(file + '\n'));
         });
