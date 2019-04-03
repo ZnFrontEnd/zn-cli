@@ -29,9 +29,9 @@ var update = {
         this.projectComponentPath = this.cwd + '/src/components/';
         this.updateArr = updateArr;
         this._initFiles();
-        // this._copy();
+        this._copy();
         this._warning();
-        // spinner.succeed("update success！\n");
+        spinner.succeed("update success！\n");
     },
     _initFiles: function() {
         if(isAll) {
