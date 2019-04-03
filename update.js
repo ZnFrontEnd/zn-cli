@@ -4,13 +4,22 @@ var spawn = require('child_process').spawn;
 var ora = require("ora");
 var chalk = require("chalk");
 
-var spinner = ora("update...\n").start();
+// var spinner = ora("update...\n").start();
 var componentStr = process.argv[2];
+var isAll = true;
 // 获取需要更新的组件
-var updateArr = /^\[.+\]$/.test(componentStr)? componentStr.replace(/^\[(.+)\]$/g, '$1').split(","): [];
+if(componentStr) {
+    var updateArr = /^\[.+\]$/.test(componentStr)? componentStr.replace(/^\[(.+)\]$/g, '$1').split(","): [];
+} else {
+    isAll = true;
+}
+
 
 
 var update = {
+    files: [],
+    notFindFiles: [],
+    existedFiles: [],
     _init: function() {
         // 项目实例的根目录
         this.cwd = process.cwd();
@@ -20,14 +29,28 @@ var update = {
         this.projectComponentPath = this.cwd + '/src/components/';
         this.updateArr = updateArr;
         this._initFiles();
-        this._copy();
+        // this._copy();
         this._warning();
-        spinner.succeed("update success！\n");
+        // spinner.succeed("update success！\n");
     },
     _initFiles: function() {
-        this.files = [];
-        this.notFindFiles = [];
-        this.existedFiles = [];
+        if(isAll) {
+           this._updateAll();
+        } else {
+            this._updatelist();
+        }
+    },
+    _updateAll: function() {
+        var dirList = this._readDir(this.currentComponentPath);
+        for(var i= 0; i< dirList.length; i++) {
+            if(fs.existsSync(path.resolve(this.projectComponentPath + dirList[i]))) {
+                this.existedFiles.push(dirList[i]);
+            } else {
+                this.files.push(['-rf', this.currentComponentPath + dirList[i], this.projectComponentPath]);
+            }
+        }
+    },
+    _updatelist: function() {
         for(var i= 0; i< updateArr.length; i++) {
             if(fs.existsSync(path.resolve(this.currentComponentPath + updateArr[i]))) {
                 // 如果component存在，则添加到files数组中
@@ -59,6 +82,18 @@ var update = {
         existedFiles.forEach(function(file) {
             console.log(chalk.yellow(file + '\n'));
         });
+    },
+    _readDir: function(path) {
+        var dirArr = [];
+        var dirList = fs.readdirSync(path);
+        dirList.forEach(function(dir) {
+            var dirPath = path + '/' + dir;
+            var stat = fs.statSync(dirPath);
+            if (stat && stat.isDirectory()) {
+                dirArr.push(dir);
+            }
+        });
+        return dirArr;
     }
 }
 
