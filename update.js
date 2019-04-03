@@ -4,7 +4,7 @@ var spawn = require('child_process').spawn;
 var ora = require("ora");
 var chalk = require("chalk");
 
-// var spinner = ora("update...\n").start();
+var spinner = ora("update...\n").start();
 var componentStr = process.argv[2];
 var isAll = true;
 // 获取需要更新的组件
