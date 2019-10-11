@@ -5,7 +5,7 @@
   "description": "通过zn-cli可以生成react/vue项目实例,方便，快速，长期维护",
   "main": "index.js",
   "bin": {
-    "zn-cli": "bin/index.js"
+    "zn-cli": "./bin/fe.js"
   },
   "keywords": [
     "react",
@@ -24,6 +24,7 @@
     "commander": "^2.19.0",
     "download-git-repo": "^1.1.0",
     "fs-extra": "^7.0.1",
+    "inquirer": "^7.0.0",
     "log-symbols": "^2.2.0",
     "ora": "^3.1.0",
     "readline-sync": "^1.4.9"
