@@ -1,3 +1,12 @@
 {
-  
+  "react": {
+    "url":"https://github.com/ZnFrontEnd/zn-cli.git",
+    "branch":"react-template",
+    "description":"react项目模板"
+  },
+  "reacttest": {
+    "url":"https://github.com/ZnFrontEnd/zn-cli.git",
+    "branch":"react-template",
+    "description":"react项目模板"
+  }
 }
