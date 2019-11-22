@@ -12,22 +12,15 @@
     "vue",
     "zn-cli"
   ],
-  "scripts": {
-    "testreact": "node bin/index.js init react test",
-    "testvue": "node bin/index.js init vue test"
-  },
   "license": "MIT",
   "dependencies": {
     "chalk": "^2.4.2",
     "cli-table": "^0.3.1",
     "co": "^4.6.0",
-    "co-prompt": "^1.0.0",
     "commander": "^2.19.0",
     "download-git-repo": "^1.1.0",
     "fs-extra": "^7.0.1",
     "inquirer": "^7.0.0",
-    "log-symbols": "^2.2.0",
-    "ora": "^3.1.0",
-    "readline-sync": "^1.4.9"
+    "ora": "^3.1.0"
   }
 }
