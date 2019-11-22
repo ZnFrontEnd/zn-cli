@@ -12,6 +12,27 @@ A light tool to generate projects in an easy way.
 
 
 
+```
+.
+├── LICENSE.txt
+├── README.md
+├── bin
+│   └── fe.js
+├── lib
+│   ├── cli
+│   │   └── index.js
+│   ├── cmd
+│   │   ├── add.js
+│   │   ├── delete.js
+│   │   ├── init.js
+│   │   └── list.js
+│   ├── table.js
+│   └── tip.js
+├── package-lock.json
+├── package.json
+└── template.json
+```
+
 ## 安装脚手架
 
 ```nginx
